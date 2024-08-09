@@ -73,7 +73,7 @@ export default function Users() {
         );
     };
 
-    const renderFooter = () => {
+    const saveCancelButtons = () => {
         return (
             <div>
                 <Button onClick={saveUser} label="Save" icon="pi pi-check" />
@@ -104,10 +104,10 @@ export default function Users() {
                     <Column body={editDelete} header="Edit/Delete" style={{ width: '10%' }}></Column>
                 </DataTable>
             </div>
-            <Dialog visible={displayDialog} style={{ width: '450px' }} header="User Details" modal={true} footer={renderFooter()} onHide={onHide}>
+            <Dialog visible={displayDialog} style={{ width: '450px' }} header="User Details" modal={true} footer={saveCancelButtons()} onHide={onHide}>
                 <div className="p-fluid">
                     <div className="p-field">
-                        <label htmlFor="first_name">First Name</label>
+                        <label>First Name</label>
                         <InputText
                             id="first_name"
                             value={user.first_name}
@@ -115,7 +115,7 @@ export default function Users() {
                         />
                     </div>
                     <div className="p-field">
-                        <label htmlFor="last_name">Last Name</label>
+                        <label>Last Name</label>
                         <InputText
                             id="last_name"
                             value={user.last_name}
@@ -123,7 +123,7 @@ export default function Users() {
                         />
                     </div>
                     <div className="p-field">
-                        <label htmlFor="username">Username</label>
+                        <label>Username</label>
                         <InputText
                             id="username"
                             value={user.username}
@@ -131,7 +131,7 @@ export default function Users() {
                         />
                     </div>
                     <div className="p-field">
-                        <label htmlFor="username">Password</label>
+                        <label>Password</label>
                         <InputText
                             id="password"
                             value={user.password}
